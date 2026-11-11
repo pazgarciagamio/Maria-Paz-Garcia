@@ -37,7 +37,7 @@ import statsmodels.formula.api as smf
 pd.set_option("display.max_columns", None)
 pd.set_option("display.width", 200)
 
-RUTA = "Data/transito_aire_junio2024.csv"   # cambiar si los datos están en otra carpeta
+RUTA = "datos/transito_aire_junio2024.csv"   # cambiar si los datos están en otra carpeta
 
 COL_TRANSITO = "#2E86AB"
 COL_NO2      = "#7B4B2A"

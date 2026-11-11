@@ -1,20 +1,28 @@
-import pandas as pd
+# %%
 from pathlib import Path
+import pandas as pd
 
 # 1. Definir la ruta raíz del proyecto o del directorio de trabajo actual
-BASE_DIR = Path.cwd() 
+BASE_DIR = Path.cwd()
 
 # 2. Construir la ruta relativa de forma segura utilizando el operador /
 # Estructura esperada: tu_proyecto/data/raw/datos.csv
-archivo = "Ejercicio-encuesta.csv"
-ruta_csv = BASE_DIR / "Data" / archivo
+archivo = "Datos proyecto.csv"
+ruta_csv = BASE_DIR / "datos" / archivo
+
+ruta_csv = BASE_DIR / "datos" / "Datos proyecto.csv"
 
 # 3. Verificar que el archivo realmente existe antes de cargarlo
 if not ruta_csv.exists():
     raise FileNotFoundError(f"No se encontró el archivo en: {ruta_csv}")
 
 # 4. Cargar el archivo CSV
-df = pd.read_csv(ruta_csv, sep=";")
+df = pd.read_csv(
+    ruta_csv,
+    sep=";",
+    decimal=",",
+    encoding="utf-8-sig"  # el "-sig" saca el BOM y evita el error de tokenización
+)
 
 # 5. Inspección inicial de los datos
 print(f"--- Archivo cargado exitosamente desde: {ruta_csv.name} ---")
@@ -27,17 +35,8 @@ df.info()
 # Nota: df.shape te da exactamente las dimensiones (filas, columnas) -> (1222, 41)
 df.shape
 
-# Veo que hay filas que están completamente vacías, por lo que las elimino
-print(df)
-
-df = df.dropna(how="all")
-
-# Ahora si esta todo bien, vuelvo a ver las dimensiones y estructura de los datos
-df.info()
-df.shape
-
 # 5.2. Filas únicas: detectando la columna que contiene el ID (Equivalente a length(unique(...)))
-df["matricula_letra"].nunique()
+df["Departamento"].nunique()
 # Si df["columna"].nunique() es igual a len(df), esa columna es un ID único
 print("\nValores únicos por columna (Buscar candidatos a ID):")
 print(df.nunique())

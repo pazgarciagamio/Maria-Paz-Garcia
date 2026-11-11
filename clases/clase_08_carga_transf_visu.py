@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 
 archivo = "o3_01_2024_04_2024.csv"
 BASE_DIR = Path.cwd()
-SUBCARPETA = BASE_DIR / "Data"
+SUBCARPETA = BASE_DIR / "datos"
 RUTA = BASE_DIR / SUBCARPETA / archivo
 
 # =============================================================================
@@ -168,7 +168,7 @@ ax.grid(alpha=0.3)
 for lado in ("top", "right"):
     ax.spines[lado].set_visible(False)
 plt.tight_layout()
-fig.savefig("ozono_2024.png", dpi=300, bbox_inches="tight")
+fig.savefig("figuras/ozono_2024.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # Partes básicas de un gráfico:
@@ -196,7 +196,7 @@ def grafico_ozono(datos, color_puntos="red", color_linea="blue", ylim=(0, 40)):
 plt.close("all")
 
 fig, ax = grafico_ozono(ozono_mes, color_puntos="green")
-fig.savefig("ozono_verde.png", dpi=300, bbox_inches="tight")
+fig.savefig("figuras/ozono_verde.png", dpi=300, bbox_inches="tight")
 plt.show()
 # =============================================================================
 # 5. Análisis profundo: agregación temporal minutal -> horario -> diario

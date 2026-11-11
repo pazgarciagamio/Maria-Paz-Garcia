@@ -13,7 +13,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-CARPETA = Path.cwd() / "Data"     # carpeta con los tres archivos
+CARPETA = Path.cwd() / "datos"     # carpeta con los tres archivos
 ARCH_AUTO = "autoscope_06_2024_volumen.csv"
 ARCH_NO2 = "no2_05_2024_08_2024.csv"
 ARCH_PM = "pm_2_5_05_2024_08_2024.csv"

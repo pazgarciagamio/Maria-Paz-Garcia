@@ -24,7 +24,7 @@ def raiz_proyecto(marcadores=(".git", "_quarto.yml", ".here")) -> Path:
 
 
 RAIZ = raiz_proyecto()
-CLASE = RAIZ / "Data" 
+CLASE = RAIZ / "datos" 
 
 
 # =============================================================================

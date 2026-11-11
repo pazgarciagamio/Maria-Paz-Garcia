@@ -1,0 +1,10 @@
+# Archivos del sistema y del editor
+.DS_Store
+.vscode/
+__pycache__/
+
+# Claves de APIs (no se suben nunca)
+datos/clave_*
+
+# Datos de más de 100 MB (GitHub no los acepta)
+datos/autoscope_*.csv

@@ -18,7 +18,7 @@ import requests
 # ---------------------------------------------------------------------
 # 1. Datos de la solicitud
 # ---------------------------------------------------------------------
-RUTA = "Data/"   # carpeta de la clase (si se corre desde esa misma carpeta, poner "")
+RUTA = "datos/"   # carpeta de la clase (si se corre desde esa misma carpeta, poner "")
 CLAVE = open(RUTA + "clave_gemini.txt").read().strip()   # la clave NO se sube a GitHub
 FOTO = "images.jpeg"
 TIPO = "image/jpeg"            # si la foto es .png, poner "image/png"
